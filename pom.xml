@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.netology</groupId>
-    <artifactId>RadioMan</artifactId>
+    <artifactId>Radio2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -63,7 +63,7 @@
                                 <rule>
                                     <limits>
                                         <limit>
-                                            <counter>BRANCH</counter>
+                                            <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>100%</minimum>
                                         </limit>
