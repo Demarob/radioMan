@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Radioman2Test {
-    Radioman2 radio = new Radioman2();
+    Radioman2 radio = new Radioman2 ();
 
     @Test
     void shouldChangeStation() {

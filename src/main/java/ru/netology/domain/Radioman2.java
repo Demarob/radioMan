@@ -1,5 +1,7 @@
 package ru.netology.domain;
 
+
+
 public class Radioman2 {
     private int currentStation;
     private int minStation = 0;
@@ -7,6 +9,16 @@ public class Radioman2 {
     private int currentVolume;
     private int minVolume = 0;
     private int maxVolume = 10;
+
+    public Radioman2() {
+        this.currentStation = currentStation;
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.currentVolume = currentVolume;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+    }
+
 
 
     public int getCurrentStation() {
