@@ -1,77 +1,122 @@
 package ru.Netology;
 
-public class Radio {
 
-    private int numberCurrentRadioStation;
-    private int soundVolume;
-    private int maxStation = 9;
-    private int minStation = 0;
-    private int maxVolume = 10;
+public class Radio {
+    private int maxChanel = 9;
+    private int minChanel = 0;
+    private int currentChanel;
+    private int currentVolume;
+    private int maxVolume = 100;
     private int minVolume = 0;
 
-//    public void setToMaxVolume(){
-//        soundVolume=10;
-//    }
-//
-//    public void setToMinVolume(){
-//        soundVolume=0;
-//    }
 
-    public void nextStation() {
-        if (numberCurrentRadioStation >= maxStation) {
-            setNumberCurrentRadioStation(minStation);
-        } else {
-            setNumberCurrentRadioStation(numberCurrentRadioStation + 1);
-        }
+    public Radio(int maxChanel, int minChanel, int currentChanel, int currentVolume, int maxVolume, int minVolume) {
+        this.maxChanel = maxChanel;
+        this.minChanel = minChanel;
+        this.currentChanel = currentChanel;
+        this.currentVolume = currentVolume;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
     }
 
-    public void prevStation() {
-        if (numberCurrentRadioStation <= minStation) {
-            setNumberCurrentRadioStation(maxStation);
-        } else {
-            setNumberCurrentRadioStation(numberCurrentRadioStation - 1);
-        }
+
+    public Radio() {
     }
 
-    public int getNumberCurrentRadioStation() {
-        return numberCurrentRadioStation;
+    public int getNumberOfChanel(){
+        return currentChanel;
     }
 
-    public void setNumberCurrentRadioStation(int newNumberCurrentRadioStation) {
-        if (newNumberCurrentRadioStation > maxStation) {
-            newNumberCurrentRadioStation = 0;
-        }
-        if (newNumberCurrentRadioStation < minStation) {
-            newNumberCurrentRadioStation = 9;
-        }
-        this.numberCurrentRadioStation = newNumberCurrentRadioStation;
+
+    public int getMaxChanel() {
+        return maxChanel;
     }
 
-    public int getSoundVolume() {
-        return soundVolume;
+    public void setMaxChanel(int maxChanel) {
+        currentChanel = maxChanel;
     }
 
-    public void setSoundVolume(int soundVolume) {
-        if (soundVolume < minVolume) {
+    public int getMinChanel() {
+        return minChanel;
+    }
+
+    public void setMinChanel(int minChanel) {
+        currentChanel = minChanel;
+    }
+
+    public int getCurrentChanel() {
+        return currentChanel;
+    }
+
+    public void setCurrentChanel(int currentChanel) {
+        if (currentChanel > maxChanel) {
             return;
         }
-        if (soundVolume > maxVolume) {
+        if (currentChanel < minChanel) {
             return;
         }
-        this.soundVolume = soundVolume;
+        this.currentChanel = currentChanel;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > maxVolume) {
+            return;
+        }
+        if (currentVolume < minVolume) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume() {
+        currentVolume = maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public void setMinVolume() {
+        currentVolume = minVolume;
+    }
+
+    public void nextChanel() {
+        if (currentChanel >= 9) {
+            setCurrentChanel(minChanel);
+        }
+        else {
+            setCurrentChanel(currentChanel + 1);
+        }
+    }
+
+
+
+    public void prevChanel() {
+        if (currentChanel <= minChanel) {
+            setCurrentChanel(maxChanel);
+        }
+        else {
+            setCurrentChanel(currentChanel - 1);
+        }
     }
 
     public void increaseVolume() {
-        if (soundVolume < maxVolume) {
-            soundVolume++;
+        if (currentVolume < maxVolume) {
+            setCurrentVolume(currentVolume + 1);
         }
     }
 
-    public void decreaseVolume() {
-        if (soundVolume > minVolume) {
-            soundVolume--;
+    public void lowerVolume() {
+        if (currentVolume > minVolume) {
+            setCurrentVolume(currentVolume - 1);
         }
     }
 }
-
-
