@@ -1,7 +1,5 @@
 package ru.netology.domain;
 
-
-
 public class Radioman2 {
     private int currentStation;
     private int minStation = 0;
@@ -64,6 +62,7 @@ public class Radioman2 {
             currentVolume++;
         }
     }
+
 
     public void decreaseVolume() {
         if (currentVolume > 0) {
